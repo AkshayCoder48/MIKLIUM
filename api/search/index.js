@@ -20,7 +20,9 @@ const httpsAgent = new https.Agent({
 const generateB = () => Math.random().toString(36).substring(2, 10) + '&b=3&s=' + Math.random().toString(36).substring(2, 4);
 
 let globalCookies = new Map([
-  ['B', generateB()]
+  ['B', generateB()],
+  // Yahoo search preferences, not an auth token. vm=p turns SafeSearch off.
+  ['sB', 'v=1&vm=p&fl=1&vl=lang_en&pn=10&rw=new&userset=1']
 ]);
 
 function getRandomUserAgent() {
